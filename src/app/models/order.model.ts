@@ -7,6 +7,8 @@ export interface OrderItem {
   export interface Order {
     id: number;
     clientId: number;
+    clientName: string;
+    orderDate: Date;
     products: OrderItem[];
   }
   
