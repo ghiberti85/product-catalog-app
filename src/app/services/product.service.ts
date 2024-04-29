@@ -1,26 +1,35 @@
-// product.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private products: Product[] = [
-    { id: 1, name: 'Product 1', description: 'Description 1', price: 100 },
-    { id: 2, name: 'Product 2', description: 'Description 2', price: 200 },
-    // Add more products as needed
-  ];
+  private productsUrl = 'assets/mock/products.json'; // Path to the mock products JSON file
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllProducts(): Product[] {
-    return this.products;
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.productsUrl).pipe(
+      catchError(error => {
+        console.error('Error fetching products:', error);
+        return of([]); // Return an empty array if there's an error
+      })
+    );
   }
 
-  getProductById(id: number): Product | undefined {
-    return this.products.find(product => product.id === id);
+  getProductById(productId: number): Observable<Product | undefined> {
+    return this.getProducts().pipe(
+      map(products => products.find(product => product.id === productId))
+    );
   }
 
-  // Add methods for adding/editing products
+  addProduct(productData: Product): Observable<Product> {
+    // Assuming you have logic here to add the product to the mock data
+    // For simplicity, let's just return the product data
+    return of(productData);
+  }
 }

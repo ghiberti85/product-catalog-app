@@ -1,4 +1,3 @@
-// product-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
@@ -18,6 +17,13 @@ export class ProductListComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.products = this.productService.getAllProducts();
+    this.productService.getProducts().subscribe(
+      (products: Product[]) => {
+        this.products = products;
+      },
+      (error) => {
+        console.error('Error loading products:', error);
+      }
+    );
   }
 }

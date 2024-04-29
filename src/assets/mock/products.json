@@ -1,0 +1,185 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "type": "Book",
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "description": "A novel about the American Dream",
+        "price": 9.99,
+        "quantity": 100
+      },
+      {
+        "id": 2,
+        "type": "Book",
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "description": "A story about racial injustice in the American South",
+        "price": 12.50,
+        "quantity": 75
+      },
+      {
+        "id": 3,
+        "type": "Book",
+        "title": "1984",
+        "author": "George Orwell",
+        "description": "A dystopian novel",
+        "price": 11.20,
+        "quantity": 60
+      },
+      {
+        "id": 4,
+        "type": "Book",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "description": "A romantic novel",
+        "price": 10.75,
+        "quantity": 80
+      },
+      {
+        "id": 5,
+        "type": "Book",
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "description": "A coming-of-age novel",
+        "price": 8.90,
+        "quantity": 90
+      },
+      {
+        "id": 6,
+        "type": "Book",
+        "title": "To the Lighthouse",
+        "author": "Virginia Woolf",
+        "description": "A modernist novel",
+        "price": 14.20,
+        "quantity": 70
+      },
+      {
+        "id": 7,
+        "type": "Book",
+        "title": "The Odyssey",
+        "author": "Homer",
+        "description": "An epic poem",
+        "price": 12.30,
+        "quantity": 55
+      },
+      {
+        "id": 8,
+        "type": "Book",
+        "title": "Frankenstein",
+        "author": "Mary Shelley",
+        "description": "A Gothic novel",
+        "price": 9.80,
+        "quantity": 65
+      },
+      {
+        "id": 9,
+        "type": "Book",
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "description": "A historical novel",
+        "price": 16.50,
+        "quantity": 85
+      },
+      {
+        "id": 10,
+        "type": "Book",
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "description": "A fantasy novel",
+        "price": 17.90,
+        "quantity": 95
+      },
+      {
+        "id": 11,
+        "type": "Book",
+        "title": "One Hundred Years of Solitude",
+        "author": "Gabriel García Márquez",
+        "description": "A magical realism novel",
+        "price": 13.40,
+        "quantity": 75
+      },
+      {
+        "id": 12,
+        "type": "Book",
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "description": "A psychological novel",
+        "price": 11.60,
+        "quantity": 60
+      },
+      {
+        "id": 13,
+        "type": "Book",
+        "title": "Wuthering Heights",
+        "author": "Emily Brontë",
+        "description": "A tragic novel",
+        "price": 10.25,
+        "quantity": 80
+      },
+      {
+        "id": 14,
+        "type": "Book",
+        "title": "The Adventures of Huckleberry Finn",
+        "author": "Mark Twain",
+        "description": "A novel about a boy's adventures",
+        "price": 9.75,
+        "quantity": 90
+      },
+      {
+        "id": 15,
+        "type": "Book",
+        "title": "The Stranger",
+        "author": "Albert Camus",
+        "description": "An existentialist novel",
+        "price": 10.90,
+        "quantity": 70
+      },
+      {
+        "id": 16,
+        "type": "Book",
+        "title": "The Road",
+        "author": "Cormac McCarthy",
+        "description": "A post-apocalyptic novel",
+        "price": 12.30,
+        "quantity": 55
+      },
+      {
+        "id": 17,
+        "type": "Book",
+        "title": "The Bell Jar",
+        "author": "Sylvia Plath",
+        "description": "A semi-autobiographical novel",
+        "price": 11.80,
+        "quantity": 65
+      },
+      {
+        "id": 18,
+        "type": "Book",
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "description": "A novel about a journey to find treasure",
+        "price": 12.50,
+        "quantity": 85
+      },
+      {
+        "id": 19,
+        "type": "Book",
+        "title": "Slaughterhouse-Five",
+        "author": "Kurt Vonnegut",
+        "description": "A novel about the firebombing of Dresden",
+        "price": 11.40,
+        "quantity": 95
+      },
+      {
+        "id": 20,
+        "type": "Book",
+        "title": "Beloved",
+        "author": "Toni Morrison",
+        "description": "A novel about the legacy of slavery",
+        "price": 13.00,
+        "quantity": 75
+      }
+    ]
+  }
+  

@@ -1,0 +1,19 @@
+<div *ngIf="(product | async) as product; else loading">
+    <h2>Product Detail</h2>
+    <div>
+      <strong>ID:</strong> {{ product.id }}
+    </div>
+    <div>
+      <strong>Name:</strong> {{ product.name }}
+    </div>
+    <div>
+      <strong>Description:</strong> {{ product.description }}
+    </div>
+    <div>
+      <strong>Price:</strong> {{ product.price }}
+    </div>
+  </div>
+  <div *ngIf="(product | async) === undefined">
+    <p>Product not found!</p>
+  </div>
+  
