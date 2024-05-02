@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+
+export class AppModule { }
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +12,14 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
+
 export class AppComponent {
+product: any;
+filterProducts() {
+throw new Error('Method not implemented.');
+}
   title = 'product-catalog-app';
+searchTerm: any;
+
 }
