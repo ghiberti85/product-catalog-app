@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsRoutingModule } from './products-routing.module';
+import { ProductCreateRoutingModule } from './product-create/product-create-routing.module'; // Import the product create routing module
+import { ProductService } from './product.service';
+import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
-import { ProductsRoutingModule } from './products-routing.module';
+import { ProductCreateComponent } from './product-create/product-create.component'; // Import the product create component
 
 @NgModule({
   declarations: [
-    ProductsListComponent,
+    ProductListComponent,
     ProductDetailsComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ProductCreateComponent // Add the product create component to the declarations array
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
-  ]
+    ProductsRoutingModule,
+    ProductCreateRoutingModule // Add the product create routing module to the imports array
+  ],
+  providers: [ProductService]
 })
 export class ProductsModule { }
