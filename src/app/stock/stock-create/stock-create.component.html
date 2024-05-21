@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Create Stock</h2>
+    <form (ngSubmit)="createStock()">
+      <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" class="form-control" id="productName" [(ngModel)]="stock.productName" name="productName" required>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" class="form-control" id="quantity" [(ngModel)]="stock.quantity" name="quantity" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="stock.location" name="location" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+  
