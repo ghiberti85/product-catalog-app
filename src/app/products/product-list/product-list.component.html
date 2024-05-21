@@ -1,4 +1,30 @@
-<div>
-    <h2>Products List</h2>
-    <!-- Product list content -->
-</div>
+<div class="container">
+    <h2>Products</h2>
+    <div class="form-group">
+      <label for="filter">Filter:</label>
+      <input type="text" id="filter" [(ngModel)]="filter" (input)="applyFilter()" class="form-control">
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.description }}</td>
+          <td>
+            <a [routerLink]="['/products', product.id]">View</a>
+            <a [routerLink]="['/products/edit', product.id]">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/products/create" class="btn btn-primary">Add Product</a>
+  </div>
+  

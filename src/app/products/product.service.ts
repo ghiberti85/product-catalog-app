@@ -7,11 +7,11 @@ import { Product } from './product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = '...'; // Your API endpoint for products
+  private apiUrl = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient) { }
 
-  getAllProducts(): Observable<Product[]> {
+  getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
   }
 

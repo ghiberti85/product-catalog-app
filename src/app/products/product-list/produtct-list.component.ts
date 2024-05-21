@@ -3,12 +3,14 @@ import { ProductService } from '../product.service';
 import { Product } from '../product.model';
 
 @Component({
-  selector: 'app-products-list',
-  templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.css']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
-export class ProductsListComponent implements OnInit {
+export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  filteredProducts: Product[] = [];
+  filter: string = '';
 
   constructor(private productService: ProductService) { }
 
@@ -17,24 +19,20 @@ export class ProductsListComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.productService.getAllProducts().subscribe(
+    this.productService.getProducts().subscribe(
       products => {
         this.products = products;
+        this.applyFilter();
       },
       error => {
-        console.error('Error loading products:', error);
+        console.error('Error fetching products:', error);
       }
     );
   }
 
-  deleteProduct(id: number): void {
-    this.productService.deleteProduct(id).subscribe(
-      () => {
-        this.products = this.products.filter(p => p.id !== id);
-      },
-      error => {
-        console.error('Error deleting product:', error);
-      }
+  applyFilter(): void {
+    this.filteredProducts = this.products.filter(product =>
+      product.name.toLowerCase().includes(this.filter.toLowerCase())
     );
   }
 }
