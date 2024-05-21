@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationModule } from './authentication/authentication.module';
+import { AuthModule } from './authentication/auth.component';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthenticationModule,
+    AuthModule,
     // Import other modules here (ProductsModule, StockModule, OrdersModule)
   ],
   providers: [],
