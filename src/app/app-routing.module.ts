@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './authentication/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  // Add routes for other modules here
+  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+  { path: 'stocks', loadChildren: () => import('./stock/stock.module').then(m => m.StockModule) },
+  { path: 'orders', loadChildren: () => import('./orders/order.module').then(m => m.OrdersModule) },
+  { path: 'login', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule) },
 ];
 
 @NgModule({
