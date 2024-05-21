@@ -1,4 +1,9 @@
-<div class="product-details">
-    <h2>Product Details</h2>
-    <!-- Product details content -->
-  </div>
+<div class="container" *ngIf="product">
+  <h2>Product Details</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Name:</strong> {{ product.name }}</li>
+    <li class="list-group-item"><strong>Price:</strong> {{ product.price }}</li>
+    <li class="list-group-item"><strong>Description:</strong> {{ product.description }}</li>
+  </ul>
+  <a [routerLink]="['/products/edit', product.id]" class="btn btn-primary mt-3">Edit</a>
+</div>

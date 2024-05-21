@@ -17,18 +17,12 @@ export class ProductDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getProduct();
-  }
-
-  getProduct(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getProductById(id).subscribe(
-      product => {
-        this.product = product;
-      },
-      error => {
-        console.error('Error loading product details:', error);
-      }
-    );
+    const productId = this.route.snapshot.paramMap.get('id');
+    if (productId) {
+      this.productService.getProductById(+productId).subscribe(
+        product => this.product = product,
+        error => console.error('Error fetching product:', error)
+      );
+    }
   }
 }

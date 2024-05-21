@@ -9,7 +9,7 @@ import { Product } from '../product.model';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  product: Product = { id: 0, name: '', price: 0, description: '' };
+  product: Product | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,30 +18,21 @@ export class ProductEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getProduct();
-  }
-
-  getProduct(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getProductById(id).subscribe(
-      product => {
-        this.product = product;
-      },
-      error => {
-        console.error('Error loading product details:', error);
-      }
-    );
+    const productId = this.route.snapshot.paramMap.get('id');
+    if (productId) {
+      this.productService.getProductById(+productId).subscribe(
+        product => this.product = product,
+        error => console.error('Error fetching product:', error)
+      );
+    }
   }
 
   saveProduct(): void {
-    this.productService.updateProduct(this.product).subscribe(
-      () => {
-        // Navigate back to product details after saving
-        this.router.navigate(['/products', 'details', this.product.id]);
-      },
-      error => {
-        console.error('Error saving product:', error);
-      }
-    );
+    if (this.product) {
+      this.productService.updateProduct(this.product).subscribe(
+        () => this.router.navigate(['/products']),
+        error => console.error('Error updating product:', error)
+      );
+    }
   }
 }
