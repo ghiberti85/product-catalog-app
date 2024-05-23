@@ -1,26 +1,43 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private currentUserRole: 'Admin' | 'Seller' | 'Client' | null = null;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  // Simulate authentication logic
   login(username: string, password: string): boolean {
-    // In a real application, you would make an HTTP request to authenticate the user
-    // For simplicity, we'll just check if the username and password are correct
-    if (username === 'admin' && password === 'admin') {
-      // Store user details in local storage to keep user logged in between page refreshes
-      localStorage.setItem('currentUser', JSON.stringify({ username, role: 'Admin' }));
-      return true;
+    // Your authentication logic goes here
+    // For simplicity, let's assume login is successful if username and password are not empty
+    if (username && password) {
+      // Set the current user role based on authentication
+      this.currentUserRole = 'Admin'; // Example role for demonstration purposes
+      return true; // Return true if login is successful
     }
-    return false;
+    return false; // Return false if login fails
   }
 
   logout(): void {
-    // Remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
+    this.currentUserRole = null;
+    this.router.navigate(['/login']);
+  }
+
+  getRole(): 'Admin' | 'Seller' | 'Client' | null {
+    return this.currentUserRole;
+  }
+
+  isAdmin(): boolean {
+    return this.currentUserRole === 'Admin';
+  }
+
+  isSeller(): boolean {
+    return this.currentUserRole === 'Seller';
+  }
+
+  isClient(): boolean {
+    return this.currentUserRole === 'Client';
   }
 }
